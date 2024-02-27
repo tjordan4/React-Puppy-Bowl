@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { getAllPlayers } from "../API/index.js";
+import { useNavigate } from "react-router-dom/dist/index.js";
 
 export default function AllPlayers(){
+    const navigate = useNavigate()
     const [players, setPlayers] = useState([]);
     useEffect(() => {
         async function fetchPlayers() {
@@ -21,7 +23,7 @@ export default function AllPlayers(){
     return <main>{
         players.map((player) => {
             return <article key={player.id}>
-                <h2>
+                <h2 onClick={() => navigate(`/players/${player.id}`)}>
                     <img src={player.imageUrl}/>
                     {player.name}
                 </h2>

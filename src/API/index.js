@@ -10,7 +10,7 @@ export const getAllPlayers = async () => {
 export const getSinglePlayer = async (playerId) => {
     try{
     
-    const response = await fetch(`${APIURL}/players/${playerId}`)
+    const response = await fetch(`${APIURL}/${playerId}`)
     const result = await response.json()
     
     return result.data

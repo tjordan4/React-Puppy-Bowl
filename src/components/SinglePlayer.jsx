@@ -6,7 +6,7 @@ export default function SinglePlayer(){
     useEffect(() => {
         async function fetchSinglePlayer(){
             try {
-                const player = await getSinglePlayer
+                const player = await getSinglePlayer(playerId)
                 setPlayer(player)
                 console.log(player)
             }   catch(err){
@@ -16,16 +16,11 @@ export default function SinglePlayer(){
         fetchSinglePlayer()
     })
     
-    return <main>{
-        player.map(() =>{
-            return <div key={player.id}>
+    return  <div key={player.id}>
                 <img src={player.imageUrl} alt="" />
                 <h2>{player.name}</h2>
                 <p>{player.id}</p>
                 <h3>{player.breed}</h3>
                 <h3>{player.status}</h3>
             </div>
-        })
-    }
-    </main>
 }
