@@ -8,7 +8,7 @@ export default function SinglePlayer(){
             try {
                 const player = await getSinglePlayer
                 setPlayer(player)
-
+                console.log(player)
             }   catch(err){
                 console.error(err)
             }
