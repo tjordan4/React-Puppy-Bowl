@@ -10,7 +10,6 @@ export default function AllPlayers(){
             try {
                 const players = await getAllPlayers()
                 setPlayers(players)
-                // console.log("Players: ", players)
             }  catch (err) {
                 console.error(err)
             }
