@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react"
 import { getSinglePlayer } from "../API/index.js";
-import { useParams } from "react-router-dom/dist/index.js";
+import { useParams } from "react-router-dom";
 
 export default function SinglePlayer(){
     const { id } = useParams()
     const [player, setPlayer] = useState(null);
-    
 
-    if (!player) {
-        return <div>Loading Player {id}...</div>
-    }
     useEffect(() => {
         async function fetchSinglePlayer(){
             try {
@@ -21,6 +17,10 @@ export default function SinglePlayer(){
         }
         fetchSinglePlayer()
     }, [])
+
+    if (!player) {
+        return <div>Loading Player {id}...</div>
+    }
     
     return  <article key={player.id}>
                 

@@ -11,8 +11,8 @@ export const getSinglePlayer = async (playerId) => {
     const response = await fetch(`${APIURL}/${playerId}`)
     const result = await response.json()
     
-    
-    return result.data.id
+    console.log(result.data.player)
+    return result.data.player
 }
 
 // export const addPlayer = async (player) => {
