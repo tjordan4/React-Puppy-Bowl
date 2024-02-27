@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import AllPlayers from './components/AllPlayers'
 import SinglePlayer from './components/SinglePlayer'
 
