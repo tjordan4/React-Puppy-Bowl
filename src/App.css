@@ -1,5 +1,19 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(216, 161, 124);
+}
+
 article img {
     width: 70px;
     vertical-align: middle;
     margin: 1rem;
+    border: 3px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px black;
+}
+
+article h2 {
+    font-size: 2rem;
 }
