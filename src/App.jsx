@@ -18,11 +18,11 @@ function App() {
       <NavBar className='navbar' />
       <Routes>
         <Route path='/' element={<AllPlayers/>} />
-        <Route path='/players/:id element={<SinglePlayer />}'/>
+        <Route path='/players/:id' element={<SinglePlayer />}/>
       </Routes>
 
       <footer>
-        
+
       </footer>
     </>
   )
