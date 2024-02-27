@@ -3,6 +3,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: rgb(216, 161, 124);
+    text-align: center;
 }
 
 article img {
@@ -17,3 +18,4 @@ article img {
 article h2 {
     font-size: 2rem;
 }
+
