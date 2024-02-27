@@ -6,7 +6,6 @@ import SinglePlayer from './components/SinglePlayer'
 
 const APIURL = "https://fsa-puppy-bowl.herokuapp.com/api/tjordan4/players" 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
