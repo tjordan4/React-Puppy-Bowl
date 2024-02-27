@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import AllPlayers from './components/AllPlayers'
@@ -19,8 +18,8 @@ function App() {
       <NavBar className='navbar' />
       <Routes>
         <Route path='/' element={<AllPlayers/>} />
+        <Route path='/players/add' element={<NewPlayerForm />}/>
         <Route path='/players/:id' element={<SinglePlayer />}/>
-        <Route path='/players/add' element={<NewPlayerForm />}></Route>
       </Routes>
 
       <footer>

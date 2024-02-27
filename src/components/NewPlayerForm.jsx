@@ -1,28 +1,36 @@
 import { useState } from "react"
-import { addPlayer } from "../API"
 import { useNavigate } from "react-router-dom/dist";
 
 
 export default function NewPlayerForm(){
-    const naviagte = useNavigate()
+    const navigate = useNavigate()
     
     const [name, setName] = useState('')
     const [breed, setBreed] = useState('')
     const [image, setImage] = useState('')
 
     async function handleSubmit(e) {
-         e.preventDefault()
-        const playerObject = {
-            name: name,
-            breed: breed,
-            imageUrl: image,
+        e.preventDefault()
+        
+        try {
+            const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/tjordan4/players', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    name: name,
+                    breed: breed,
+                    imageUrl: image
+                    })
+                })
+                const result = await response.json();
+            }   catch(err){
+            console.error(err)
         }
-        await addPlayer(playerObject)
 
         navigate('/')
     }
 
-    return <form>
+    return <form onSubmit={handleSubmit}>
         <h1>Add Player</h1>
         <div>
             <label >Name</label>
@@ -41,3 +49,4 @@ export default function NewPlayerForm(){
         </div>
     </form>
 }
+
