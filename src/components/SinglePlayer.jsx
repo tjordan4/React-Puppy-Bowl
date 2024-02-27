@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { deletePlayer, getSinglePlayer } from "../API/index.js";
 import { useParams } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom/dist/index.js";
 
 export default function SinglePlayer(){
+    const navigate = useNavigate()
+    
     const { id } = useParams()
     const [player, setPlayer] = useState(null);
 
@@ -22,7 +24,7 @@ export default function SinglePlayer(){
     async function deleteHandler(playerId){
         await deletePlayer(playerId)
 
-        Navigate('/')
+        navigate('/')
     }
 
     if (!player) {
