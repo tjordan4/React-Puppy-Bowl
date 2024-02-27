@@ -1,26 +1,34 @@
 import { useEffect, useState } from "react"
 import { getSinglePlayer } from "../API/index.js";
+import { useParams } from "react-router-dom/dist/index.js";
 
 export default function SinglePlayer(){
-    const [player, setPlayer] = useState([]);
+    const { id } = useParams()
+    const [player, setPlayer] = useState(null);
+    
+
+    if (!player) {
+        return <div>Loading Player {id}...</div>
+    }
     useEffect(() => {
         async function fetchSinglePlayer(){
             try {
-                const player = await getSinglePlayer(playerId)
+                const player = await getSinglePlayer(id)
                 setPlayer(player)
-                console.log(player)
             }   catch(err){
                 console.error(err)
             }
         }
         fetchSinglePlayer()
-    })
+    }, [])
     
-    return  <div key={player.id}>
-                <img src={player.imageUrl} alt="" />
-                <h2>{player.name}</h2>
+    return  <article key={player.id}>
+                
+                <h2>
+                <img src={player.imageUrl} />
+                {player.name}</h2>
                 <p>{player.id}</p>
                 <h3>{player.breed}</h3>
                 <h3>{player.status}</h3>
-            </div>
+            </article>
 }

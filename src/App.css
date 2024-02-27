@@ -41,3 +41,11 @@ header h1 {
 header h3 {
     font-size: 1.5rem;
 }
+
+nav {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+}
