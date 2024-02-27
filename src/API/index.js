@@ -15,6 +15,13 @@ export const getSinglePlayer = async (playerId) => {
     return result.data.player
 }
 
-export const addPlayer = async (player) => {
-   
+export const deletePlayer = async (playerId) => {
+    try {
+        const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/tjordan4/players/${playerId}`, {
+                method: "DELETE"
+        })
+    }   catch(err){
+        console.error(err)
+    }
+        
 }
