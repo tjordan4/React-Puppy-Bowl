@@ -14,11 +14,16 @@ function App() {
         <h1>Welcome to the 2024 Puppy Bowl!</h1>
         <h3>Sponsored by the Humane Society of Utah</h3>
       </header>
+      
       <NavBar className='navbar' />
       <Routes>
         <Route path='/' element={<AllPlayers/>} />
         <Route path='/players/:id element={<SinglePlayer />}'/>
-    </Routes>
+      </Routes>
+
+      <footer>
+        
+      </footer>
     </>
   )
 }
